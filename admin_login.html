@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKIT Result Viewer - Admin Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- ADMIN LOGIN PAGE                               -->
+<!-- Same structure as the student login page       -->
+<!-- (index.html), but this form submits to         -->
+<!-- admin_login.php and checks the "admins" table  -->
+<!-- instead of the "students" table.                -->
+<!-- ============================================= -->
+
+<div class="login-page">
+  <div class="login-card">
+
+    <div class="login-header">
+      <div class="logo-circle admin-logo">ADMIN</div>
+      <h1>Admin Panel</h1>
+      <p class="subtitle">SKIT Result Viewer &mdash; Staff Login</p>
+      <p class="college-name">Swami Keshvanand Institute of Technology, Management &amp; Gramothan</p>
+    </div>
+
+    <!-- admin_login.php redirects back here with ?error=... on failure -->
+    <div id="errorBox" class="error-box" style="display:none;"></div>
+
+    <form id="adminLoginForm" action="admin_login.php" method="POST" novalidate>
+
+      <div class="form-group">
+        <label for="username">Admin Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="e.g. admin"
+          autocomplete="username"
+          required>
+        <span class="field-error" id="usernameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter admin password"
+            autocomplete="current-password"
+            required>
+          <button type="button" id="togglePassword" class="toggle-btn">Show</button>
+        </div>
+        <span class="field-error" id="adminPasswordError"></span>
+      </div>
+
+      <button type="submit" class="btn-primary">Login as Admin</button>
+    </form>
+
+    <p class="hint-text">
+      Sample admin login: Username <strong>admin</strong>,
+      Password <strong>admin@123</strong>
+    </p>
+
+    <p class="hint-text"><a href="index.html">&larr; Back to Student Login</a></p>
+  </div>
+</div>
+
+<footer class="login-footer">
+  &copy; 2026 SKIT Result Viewer &mdash; A student academic project
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
